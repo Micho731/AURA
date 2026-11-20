@@ -1,0 +1,17 @@
+.env
+*.env
+!.env.example
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+frontend/dist/
+*.log
+backend/static/audio/
+data/brain/*
+data/knowledge/raw/*
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
