@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #050810;
+}
+
+::selection { background: #7CE7FF; color: #050810; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124,231,255,0.4); }
+
+/* Subtle vignette helper for the belly display */
+.vignette {
+  background:
+    radial-gradient(ellipse at center, rgba(124,231,255,0.05) 0%, rgba(5,8,16,0) 60%),
+    linear-gradient(180deg, #0A1628 0%, #050810 100%);
+}
+
+/* Glass card style */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(124,231,255,0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Kiosk mode: hide the mouse cursor so the installed display looks like an appliance. */
+.kiosk, .kiosk * { cursor: none !important; }
+
+/* Soft cyan text glow for big kiosk headings. */
+.text-glow { text-shadow: 0 0 28px rgba(124,231,255,0.35); }
+
+/* Gentle float for the hero logo. */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float { animation: float-soft 5s ease-in-out infinite; }

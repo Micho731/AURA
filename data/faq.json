@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "question": "What majors and programs does the Faculty of Engineering and Computer Science offer?",
+      "answer": "Undergraduate (BS): Computer & Communications Engineering (CCE), CCE with a Biomedical Engineering emphasis, Mechatronics Engineering, Computer Science, and Information & Communications Technology (ICT). Graduate (MS): Computer & Communications Engineering, Mechatronics Engineering, Computer Science, and ICT."
+    },
+    {
+      "question": "Is the program accredited?",
+      "answer": "Yes. AUST holds ABET accreditation from both the Engineering Accreditation Commission and the Computing Accreditation Commission, plus evalag institutional accreditation, ISO 17025, CHEA recognition, and partnerships with Cisco Networking Academy and Huawei ICT Academy."
+    },
+    {
+      "question": "Where are the AUST campuses located?",
+      "answer": "AUST has four campuses: Beirut (Achrafieh, the main campus), Sidon (Nazih Bizri Boulevard), Zahle (Mouallaka), and Bhamdoun. The Faculty of Engineering and Computer Science operates primarily at the Achrafieh campus, with programs at Zahle as well."
+    },
+    {
+      "question": "What competitions and awards has the faculty won?",
+      "answer": "AUST students won FIRST PRIZE in the Networking Track at the 2023 Regional Huawei ICT Competition in Bahrain (among 30 countries) and FIRST PRIZE in the Networking Track at the 2024 Global Huawei ICT Competition in China (among 80 countries worldwide). In senior project competitions, AUST placed 1st at the LU competition and 2nd at the BAU competition, and regularly hosts robotics competitions."
+    },
+    {
+      "question": "What do I need for the entrance exam and admission?",
+      "answer": "Admission needs an online application, a placement exam (SAT score or the AUST Placement Exam), a letter of acceptance, and registration. The AUST entrance exam is the English Entrance Exam (EEE) plus MAT I or MAT II, with $75 application fees. SAT Math 325+ or SAT English 650+ waive the exam; TOEFL (550 / IBT 72) or IELTS (6.5 freshman, 7.0 sophomore) are accepted. Early Bird Registration gives a free entrance exam, free petition fees, and a 25% discount."
+    },
+    {
+      "question": "How much is tuition and what are the fees?",
+      "answer": "Undergraduate tuition is $220 per credit hour ($3,300 for a 15-credit semester, $7,920 for a 36-credit year). Master's courses are $320 per credit. Registration fees are $363 (Fall/Spring), $190 (Summer I), $165 (Summer II); there is a $120 IT fee per semester, $50 accident insurance, and $60 social security per year."
+    },
+    {
+      "question": "What research does AUST do and how is it ranked?",
+      "answer": "AUST is ranked #181-190 in the QS Arab Region University Rankings 2026, with 350+ scientific publications and 4,500+ citations. Key research areas are Artificial Intelligence, Robotics & Automation, Wireless Communications (5G), Internet of Things (IoT), and Smart Systems."
+    },
+    {
+      "question": "What is the Project Lab Expo and senior design expo?",
+      "answer": "At the Project Lab Expo, student teams present hands-on lab projects from their engineering courses with a PowerPoint, poster, report, and a 5-minute demo video plus Q&A. Senior Design projects are larger capstone projects shown at their own senior expo and external competitions, where AUST teams have placed 1st (LU) and 2nd (BAU)."
+    },
+    {
+      "question": "What international certifications can students earn?",
+      "answer": "Students can earn CISCO certifications through the Cisco Networking Academy (CCNAv7 Introduction to Networks, and Enterprise Networking, Security & Automation) and Huawei certifications in Artificial Intelligence and 5G."
+    },
+    {
+      "question": "How do I schedule a meeting with an instructor?",
+      "answer": "Just tell me who you'd like to meet and what it's about — I'll send the request directly to them and they will accept or decline."
+    }
+  ]
+}

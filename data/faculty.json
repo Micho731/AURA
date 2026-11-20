@@ -1,0 +1,82 @@
+{
+  "faculty": [
+    {
+      "id": "1",
+      "name": "Dr. Jane Doe",
+      "dept": "Computer & Communications Engineering",
+      "office": "Block A, Room 501",
+      "title": "Associate Professor",
+      "status": "Available",
+      "username": "jdoe",
+      "password": "demo1234",
+      "campus": "Achrafieh (Beirut)",
+      "office_hours": {
+        "mon": [],
+        "tue": [],
+        "wed": [
+          {
+            "start": "14:00",
+            "end": "16:00"
+          }
+        ],
+        "thu": [],
+        "fri": [],
+        "sat": [],
+        "sun": []
+      },
+      "slot_minutes": 30
+    },
+    {
+      "id": "2",
+      "name": "Dr. John Smith",
+      "dept": "Mechatronics Engineering",
+      "office": "Block A, Room 602",
+      "title": "Department Chair",
+      "status": "Available",
+      "username": "jsmith",
+      "password": "demo1234",
+      "campus": "Achrafieh (Beirut)",
+      "office_hours": {
+        "mon": [],
+        "tue": [],
+        "wed": [
+          {
+            "start": "14:00",
+            "end": "16:00"
+          }
+        ],
+        "thu": [],
+        "fri": [],
+        "sat": [],
+        "sun": []
+      },
+      "slot_minutes": 30
+    },
+    {
+      "id": "3",
+      "name": "Dr. Maya Example",
+      "dept": "Biomedical Engineering",
+      "office": "Block B, Room 310",
+      "title": "Assistant Professor",
+      "status": "Available",
+      "username": "mexample",
+      "password": "demo1234",
+      "campus": "Achrafieh (Beirut)",
+      "office_hours": {
+        "mon": [],
+        "tue": [],
+        "wed": [
+          {
+            "start": "14:00",
+            "end": "16:00"
+          }
+        ],
+        "thu": [],
+        "fri": [],
+        "sat": [],
+        "sun": []
+      },
+      "slot_minutes": 30
+    }
+  ]
+}

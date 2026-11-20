@@ -1,0 +1,34 @@
+{
+  "programs": [
+    {
+      "code": "CCE",
+      "name": "Computer & Communications Engineering",
+      "description": "5-year BS program covering software, hardware, networks, and communications systems. ABET-accredited at the Beirut campus."
+    },
+    {
+      "code": "MTE",
+      "name": "Mechatronics Engineering",
+      "description": "5-year BS combining mechanical, electrical, and computer engineering for the design of intelligent automated systems and robotics."
+    },
+    {
+      "code": "BME",
+      "name": "Biomedical Engineering Track",
+      "description": "Specialized track within CCE focused on medical instrumentation, signal processing, and healthcare technologies."
+    }
+  ],
+  "locations": {
+    "Dean's Office": { "building": "Block A", "room": "Room 201", "floor": "2nd floor" },
+    "CCE Department": { "building": "Block B", "room": "Room 210", "floor": "2nd floor" },
+    "MTE Department": { "building": "Block A", "room": "Room 300", "floor": "3rd floor" },
+    "Computer Lab": { "building": "Block B", "room": "Room 405", "floor": "4th floor" },
+    "Mechatronics Lab": { "building": "Block A", "room": "Room 410", "floor": "4th floor" },
+    "Biomedical Lab": { "building": "Block C", "room": "Room 412", "floor": "4th floor" },
+    "Engineering Library": { "building": "Block A", "room": "2nd Floor Wing", "floor": "2nd floor" },
+    "Student Services": { "building": "Main Hall", "room": "Room 101", "floor": "Ground floor" }
+  },
+  "contact": {
+    "dean_office_phone": "+961 1 XXX XXX",
+    "general_email": "foe@aust.edu.lb",
+    "website": "https://www.aust.edu.lb/foe"
+  }
+}
