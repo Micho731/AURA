@@ -1,6 +1,8 @@
 # AURA — Automated Unified Reception Assistant
 
-A voice-first AI reception kiosk that greets visitors, answers questions about a university faculty, and books meetings with instructors. Built as a senior design project in 2026.
+A voice-first AI reception kiosk that greets visitors, answers questions about a university faculty, and books meetings with instructors.
+
+**Built:** June 2026 · Senior design project
 
 
 ## Demo
@@ -144,4 +146,4 @@ Demo instructor login: `jdoe` / `demo1234` (sample data only).
 
 ## Author
 
-**Michel Salame** — designed and built the entire software system (frontend, backend, AI pipeline, data).
+**Michel Salame** — [LinkedIn](https://www.linkedin.com/in/michel-salame)
