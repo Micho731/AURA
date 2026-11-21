@@ -2,7 +2,29 @@
 
 A voice-first AI reception kiosk that greets visitors, answers questions about a university faculty, and books meetings with instructors. Built as a senior design project in 2026.
 
-> Demo video: *coming soon*
+
+## Demo
+
+https://github.com/user-attachments/assets/4fd0bd98-12a9-4f15-8426-599c428ad442
+
+## Screenshots
+
+**The kiosk in action**
+
+<img width="1600" height="900" alt="aura-overview" src="https://github.com/user-attachments/assets/97e6db28-3cd4-4bb0-8c6b-73e510cf01f9" />
+
+**Animated avatar (lip-syncs to AURA's voice)**
+
+<img width="800" height="500" alt="aura-10-avatar-face" src="https://github.com/user-attachments/assets/cdeeb87b-6c73-454e-887a-80f46f3476e0" />
+
+**Instructor app (phone)**
+
+<img width="1527" height="1075" alt="aura-instructor-app" src="https://github.com/user-attachments/assets/5c83735a-3467-4afb-83f8-d920c74a68af" />
+
+**Admin dashboard**
+
+<img width="800" height="1073" alt="aura-9-admin-instructors" src="https://github.com/user-attachments/assets/68855b9f-0acf-4d8a-9903-e50f1972d62f" />
+
 
 ## What it does
 
