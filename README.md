@@ -26,6 +26,16 @@ https://github.com/user-attachments/assets/4fd0bd98-12a9-4f15-8426-599c428ad442
 <img width="450" alt="aura-9-admin-instructors" src="https://github.com/user-attachments/assets/68855b9f-0acf-4d8a-9903-e50f1972d62f" />
 
 
+## Results
+
+Evaluated on 32 visitor questions, with answers checked against the source data:
+
+| Metric | Result |
+| --- | --- |
+| Answer accuracy | 91% (29 of 32) |
+| Off-topic questions safely declined | 4 of 4 |
+| Average time to spoken reply | 3.9 s |
+
 ## What it does
 
 1. **Notices you.** A camera watches for a visitor who stands close and looks at the screen for 2.5 seconds, then AURA wakes and greets them.
