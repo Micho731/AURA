@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/4fd0bd98-12a9-4f15-8426-599c428ad442
 
 **Animated avatar (lip-syncs to AURA's voice)**
 
-<img width="800" height="500" alt="aura-10-avatar-face" src="https://github.com/user-attachments/assets/cdeeb87b-6c73-454e-887a-80f46f3476e0" />
+<img width="500" alt="aura-10-avatar-face" src="https://github.com/user-attachments/assets/cdeeb87b-6c73-454e-887a-80f46f3476e0" />
 
 **Instructor app (phone)**
 
@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/4fd0bd98-12a9-4f15-8426-599c428ad442
 
 **Admin dashboard**
 
-<img width="800" height="1073" alt="aura-9-admin-instructors" src="https://github.com/user-attachments/assets/68855b9f-0acf-4d8a-9903-e50f1972d62f" />
+<img width="450" alt="aura-9-admin-instructors" src="https://github.com/user-attachments/assets/68855b9f-0acf-4d8a-9903-e50f1972d62f" />
 
 
 ## What it does
