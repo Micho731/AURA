@@ -7,7 +7,7 @@ A voice-first AI reception kiosk that greets visitors, answers questions about a
 
 ## Demo
 
-**[▶ Watch the demo video](media/demo.mp4)** (1 min 45 s): a visitor walks up, AURA wakes, answers course questions, shows a flowchart, books a meeting, and the instructor accepts from a phone. Names and logos on the kiosk screen are blurred.
+**Demo video** (1 min 45 s): a visitor walks up, AURA wakes, answers course questions, shows a flowchart, books a meeting, and the instructor accepts from a phone. Names and logos on the kiosk screen are blurred.
 
 ## Screenshots
 
