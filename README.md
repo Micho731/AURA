@@ -2,12 +2,18 @@
 
 A voice-first AI reception kiosk that greets visitors, answers questions about a university faculty, and books meetings with instructors.
 
-**Built:** June 2026 · Senior design project
+**Built:** June 2026 · Senior design project (capstone)
 
 
 ## Demo
 
-**Demo video** (1 min 45 s): a visitor walks up, AURA wakes, answers course questions, shows a flowchart, books a meeting, and the instructor accepts from a phone. Names and logos on the kiosk screen are blurred.
+**Demo video** (1 min 45 s): a visitor walks up, AURA wakes, answers course questions, shows a flowchart, books a meeting, and the instructor accepts from a phone.
+
+
+
+https://github.com/user-attachments/assets/96e0b93d-f827-465b-9f03-814f6154c366
+
+
 
 ## Screenshots
 
