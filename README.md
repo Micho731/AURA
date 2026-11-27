@@ -15,9 +15,17 @@ A voice-first AI reception kiosk that greets visitors, answers questions about a
 
 <img width="1600" alt="AURA kiosk: avatar face above the info screen, answering questions and showing a flowchart; instructor app on a phone" src="media/aura-overview.jpg" />
 
+**Kiosk screens**
+
+| Welcome: the camera checks that someone is facing the kiosk (face blurred) | Greeting |
+| --- | --- |
+| <img src="media/screen-welcome.jpg" alt="Welcome screen with the camera circle and the prompt to stand inside it"> | <img src="media/screen-greeting.jpg" alt="AURA greeting the visitor while speaking"> |
+| **Answering with a program flowchart** | **Booking a meeting with an instructor** |
+| <img src="media/screen-flowchart.jpg" alt="AURA showing the program flowchart in answer to a spoken question"> | <img src="media/screen-booking.jpg" alt="AURA confirming a meeting request sent to a demo instructor"> |
+
 **Animated avatar (lip-syncs to AURA's voice)**
 
-<img width="500" alt="aura-10-avatar-face" src="https://github.com/user-attachments/assets/cdeeb87b-6c73-454e-887a-80f46f3476e0" />
+<img width="600" alt="AURA's animated face on the second screen" src="media/screen-avatar.jpg" />
 
 **Instructor app (phone)**
 
