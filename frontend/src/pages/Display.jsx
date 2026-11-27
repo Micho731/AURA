@@ -6,6 +6,7 @@ import { VoiceListener } from '../lib/recorder';
 import Waveform from '../components/Waveform';
 import Logo from '../components/Logo';
 import BrandFooter from '../components/BrandFooter';
+import { INSTITUTION_NAME, FACULTY_NAME } from '../config';
 import { SmartCard } from '../components/Cards';
 import { openFaceChannel, FACE_MSG } from '../lib/faceChannel';
 import { usePresence } from '../lib/usePresence';
@@ -23,7 +24,7 @@ const WAKE_PATTERN = /^\s*(hey|hi|hello|ok|okay)?\s*(aura|aurora|aurelia|ora|har
 const MODES = { IDLE: 'idle', PROCESSING: 'processing', SPEAKING: 'speaking' };
 
 // AURA's self-introduction, spoken when a new visitor engages.
-const GREETING = "Hi there! I'm AURA, the assistant for the Faculty of Engineering and Computer Science at AUST. What can I do for you?";
+const GREETING = `Hi there! I'm AURA, the assistant for the ${FACULTY_NAME} at ${INSTITUTION_NAME}. What can I do for you?`;
 
 // Varied, friendly lines for when AURA can't understand the speech — picked at random so it never
 // sounds like a broken record.

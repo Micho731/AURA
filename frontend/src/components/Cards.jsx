@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, User, GraduationCap, HelpCircle, CheckCircle2, XCircle, Building2, Briefcase, Image as ImageIcon } from 'lucide-react';
 import { API } from '../api';
+import { INSTITUTION_NAME } from '../config';
 
 const STATUS_COLOR = {
   'Available':  'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
@@ -54,7 +55,7 @@ export function IdleCard({ time }) {
 
       <h1 className="text-5xl font-display font-bold tracking-tight text-white mb-3">AURA</h1>
       <p className="text-zinc-400 text-base tracking-wide">Faculty of Engineering Reception</p>
-      <p className="text-zinc-600 text-xs mt-1 tracking-widest font-light uppercase">AUST Lebanon</p>
+      <p className="text-zinc-600 text-xs mt-1 tracking-widest font-light uppercase">{INSTITUTION_NAME}</p>
 
       <div className="mt-12 text-zinc-500 text-sm">
         <span className="font-mono">{time.toLocaleString([], { dateStyle: 'full', timeStyle: 'short' })}</span>

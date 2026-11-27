@@ -5,17 +5,17 @@ import React, { useState } from 'react';
  * present yet (so the UI never breaks while logos are being added). Loads fully offline.
  *
  * Files expected in frontend/public/logos/:
- *   aura-robot.png · aust-seal.png · foe-shield.png
+ *   aura-robot.png · university-seal.png · faculty-shield.png
  */
 const SRC = {
   aura: '/logos/aura-robot.png',
-  aust: '/logos/aust-seal.png',
-  foe: '/logos/foe-shield.png',
+  university: '/logos/university-seal.png',
+  faculty: '/logos/faculty-shield.png',
 };
 const FALLBACK = {
   aura: 'AURA',
-  aust: 'AUST',
-  foe: 'FOE',
+  university: 'UNI',
+  faculty: 'FAC',
 };
 
 export default function Logo({ name, className = '', style, alt }) {

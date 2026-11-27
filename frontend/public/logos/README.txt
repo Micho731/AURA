@@ -1,8 +1,8 @@
-AURA — put the three logo image files here, with these EXACT names:
+AURA logo files (served at /logos/<name>, load offline):
 
-  aura-robot.png   →  the AURA robot mascot (cyan robot + "AURA" wordmark)
-  aust-seal.png    →  the round blue AUST university seal
-  foe-shield.png   →  the orange Faculty of Engineering shield
+  aura-robot.png        ->  the AURA robot mascot
+  university-seal.png   ->  the university seal shown in the footer (replace with your own)
+  faculty-shield.png    ->  the faculty shield shown in the footer (replace with your own)
 
-PNG with transparent background is best. They are served at /logos/<name> and load offline.
-If a file is missing, the UI shows a small text fallback instead of breaking.
+PNG with a transparent background is best. If a file is missing, the UI shows a small text
+fallback instead of breaking.
