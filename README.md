@@ -7,13 +7,13 @@ A voice-first AI reception kiosk that greets visitors, answers questions about a
 
 ## Demo
 
-https://github.com/user-attachments/assets/4fd0bd98-12a9-4f15-8426-599c428ad442
+**[▶ Watch the demo video](media/demo.mp4)** (1 min 45 s): a visitor walks up, AURA wakes, answers course questions, shows a flowchart, books a meeting, and the instructor accepts from a phone. Names and logos on the kiosk screen are blurred.
 
 ## Screenshots
 
 **The kiosk in action**
 
-<img width="1600" height="900" alt="aura-overview" src="https://github.com/user-attachments/assets/97e6db28-3cd4-4bb0-8c6b-73e510cf01f9" />
+<img width="1600" alt="AURA kiosk: avatar face above the info screen, answering questions and showing a flowchart; instructor app on a phone" src="media/aura-overview.jpg" />
 
 **Animated avatar (lip-syncs to AURA's voice)**
 
@@ -21,7 +21,7 @@ https://github.com/user-attachments/assets/4fd0bd98-12a9-4f15-8426-599c428ad442
 
 **Instructor app (phone)**
 
-<img width="1527" height="1075" alt="aura-instructor-app" src="https://github.com/user-attachments/assets/5c83735a-3467-4afb-83f8-d920c74a68af" />
+<img width="1527" alt="Instructor app: sign-in, meeting inbox with accept and decline, weekly office hours" src="media/aura-instructor-app.jpg" />
 
 **Admin dashboard**
 
@@ -38,7 +38,7 @@ Evaluated on 32 visitor questions, with answers checked against the source data:
 | Off-topic questions safely declined | 4 of 4 |
 | Average time to spoken reply | 3.9 s |
 
-## What it does
+## How it works
 
 1. **Notices you.** A camera watches for a visitor who stands close and looks at the screen for 2.5 seconds, then AURA wakes and greets them.
 2. **Listens.** Speech is transcribed in real time and filtered for noise and non-English input.
@@ -80,15 +80,16 @@ Evaluated on 32 visitor questions, with answers checked against the source data:
 | Notifications | Web Push (VAPID) via pywebpush |
 | Hardware | Mini-PC, 24" info display, 10" face screen, webcam, USB microphone |
 
-## Key engineering decisions
+## Engineering notes
 
 - **RAG over a general chatbot** keeps answers grounded in the institution's real information.
 - **Perception runs on-device.** Presence detection happens in the browser and no camera images are stored.
 - **Cloud first, offline fallback.** Speech recognition and synthesis switch to local models when the network drops.
 - **Gaze-based wake-up** (face size, yaw within 22°, pitch within 20°, held 2.5 s) avoids false triggers from people walking past.
 - **No database server.** Atomic JSON files keep the kiosk simple to deploy and maintain.
+- **Institution-neutral.** The university name, faculty, campuses and scraper sources live in `.env` and `tools/sources.json`, so the same code runs at any faculty.
 
-## Project structure
+## Repository layout
 
 ```
 backend/
@@ -96,8 +97,10 @@ backend/
   db.py              JSON store: faculty, appointments, knowledge, media
   routes/            chat, faculty, admin, push endpoints
   services/          rag, brain (vector index), stt, tts, scheduling, push
+  config.py          institution, faculty and campus names (from .env)
   tools/             scrape the faculty website and build the knowledge index
 data/                sample data (demo instructors, FAQ, settings)
+media/               demo video and screenshots
 frontend/
   src/pages/         Face, Display, Faculty, Admin, CameraTest
   src/components/    Avatar, Cards, managers for knowledge, media, schedule
@@ -105,7 +108,7 @@ frontend/
   public/mediapipe/  offline face-landmark model and WASM runtime
 ```
 
-## Run it locally (Windows)
+## Run it (Windows)
 
 Needs Python 3.10+, Node.js 18+, and an OpenAI API key.
 
@@ -115,14 +118,16 @@ cd backend
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-copy .env.example .env      # then put your OpenAI key in .env
+copy .env.example .env      # then put your OpenAI key and your institution's names in .env
 
-# Build the knowledge base (scrapes the faculty site, then embeds it)
+# Build the knowledge base: copy tools\sources.example.json to tools\sources.json,
+# point it at your faculty site, then scrape and embed
 python -m tools.scrape_foe
 python -m tools.ingest
 
 # Frontend
 cd ..\frontend
+copy .env.example .env      # optional: your institution's name on screen
 npm install
 npm run build
 ```
