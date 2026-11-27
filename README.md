@@ -118,29 +118,56 @@ frontend/
 
 ## Run it (Windows)
 
-Needs Python 3.10+, Node.js 18+, and an OpenAI API key.
+**You need:** Windows 10 or 11, Python 3.10–3.12, Node.js 18+, Chrome or Edge, a webcam and microphone, and an OpenAI API key. AURA uses the OpenAI API for answers and speech, so it needs internet.
 
-```powershell
-# Backend
-cd backend
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-copy .env.example .env      # then put your OpenAI key and your institution's names in .env
+### Quick start with the demo data (about 10 minutes)
 
-# Build the knowledge base: copy tools\sources.example.json to tools\sources.json,
-# point it at your faculty site, then scrape and embed
-python -m tools.scrape_foe
-python -m tools.ingest
+1. **Install the backend.** Open PowerShell in the `backend` folder (type `powershell` in File Explorer's address bar there) and run:
 
-# Frontend
-cd ..\frontend
-copy .env.example .env      # optional: your institution's name on screen
-npm install
-npm run build
-```
+   ```powershell
+   python -m venv venv
+   .\venv\Scripts\python -m pip install -r requirements.txt
+   copy .env.example .env
+   ```
 
-Then double-click `START-AURA.bat` and open:
+2. **Add your key.** Open `backend\.env` in Notepad and paste your OpenAI key after `OPENAI_API_KEY=`. Optionally set `INSTITUTION_NAME`, `FACULTY_NAME` and `CAMPUSES` to your own. To show those names on the kiosk screens too, also copy `frontend\.env.example` to `frontend\.env` and set them there before the first start. Never commit `.env` files (they are in `.gitignore`).
+
+3. **Build AURA's knowledge index** from the sample FAQ and instructors in `data/`:
+
+   ```powershell
+   .\venv\Scripts\python -m tools.ingest
+   ```
+
+4. **Start it.** Double-click `START-AURA.bat` in the main folder. The first start installs and builds the web app (1–2 minutes), then opens the kiosk and instructor pages. Allow camera and microphone access in the browser.
+
+### Use your own faculty's information (optional)
+
+1. In `backend\.env`, set `FOE_SCRAPE_URL` to your faculty website (it must have a `sitemap.xml`).
+2. Install the browser the scraper uses, then scrape and rebuild the index:
+
+   ```powershell
+   .\venv\Scripts\python -m playwright install chromium
+   .\venv\Scripts\python -m tools.scrape_foe
+   .\venv\Scripts\python -m tools.ingest
+   ```
+
+   `python -m tools.scrape_foe --file urls.txt` scrapes only the pages listed in a text file.
+3. For program flowcharts and course lists published as PDFs, copy `tools\sources.example.json` to `tools\sources.json`, put your links in it, and run `python -m tools.scrape_pdfs` and `python -m tools.build_catalog` before `tools.ingest`.
+4. Replace the demo instructors, FAQ and offices in `data/`, or manage them from the `/admin` page.
+
+### If something goes wrong
+
+| Problem | Fix |
+| --- | --- |
+| `No module named 'openai'` (or another module) when the server starts | The `venv` is missing or incomplete: repeat step 1 of the quick start. |
+| `Activate.ps1 cannot be loaded` | You don't need to activate the venv: run the commands with `.\venv\Scripts\python` as shown. |
+| AURA can't answer questions about the faculty | The knowledge index is empty: run step 3 (`tools.ingest`). |
+| The page says "no built frontend" | Run `npm install` and `npm run build` in `frontend`, or delete `frontend\dist` and start `START-AURA.bat` again. |
+| A phone can't open the instructor page | The phone must be on the same Wi-Fi, and Windows Firewall must allow port 8000. |
+
+### Pages
+
+On the kiosk PC the pages are at `http://localhost:8000/...`; for phones, `START-AURA.bat` shows the PC's Wi-Fi address.
 
 | Route | Device | Purpose |
 | --- | --- | --- |
