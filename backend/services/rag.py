@@ -19,6 +19,7 @@ import re
 
 from openai import OpenAI
 
+import config
 import db
 from services import brain
 
@@ -26,7 +27,7 @@ CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o")
 
 # Which campus this kiosk physically stands at. AURA scopes to it and never asks.
 # Admin-settable (data/settings.json) with the .env value as the fallback default.
-_ENV_HOME_CAMPUS = os.getenv("HOME_CAMPUS", "Achrafieh (Beirut)").strip()
+_ENV_HOME_CAMPUS = config.HOME_CAMPUS
 
 def get_home_campus() -> str:
     try:
@@ -47,7 +48,7 @@ def _get_client() -> OpenAI:
     return _client
 
 
-SYSTEM_PROMPT = """You are AURA, the reception assistant for the FACULTY OF ENGINEERING AND COMPUTER SCIENCE at AUST Lebanon.
+SYSTEM_PROMPT = """You are AURA, the reception assistant for the __FACULTY_UPPER__ at __INSTITUTION__.
 You greet visitors, answer questions using the provided context, and help students request meetings with instructors.
 
 SCOPE — you serve the Faculty of Engineering and Computer Science:
@@ -79,13 +80,12 @@ Grounding:
   not sure and suggest the Dean's office. Do not invent facts, room numbers, or names.
 
 Campuses (CRITICAL — this kiosk has a FIXED location):
-- AUST has four campuses: Achrafieh (Beirut, main), Zahle (Bekaa), Sidon (South), Bhamdoun (Mount
-  Lebanon). THIS kiosk physically stands at the campus given as "THIS KIOSK IS AT" in the context.
+- __INSTITUTION__ has these campuses: __CAMPUSES__. THIS kiosk physically stands at the campus given as "THIS KIOSK IS AT" in the context.
 - ASSUME the visitor is at THIS kiosk's campus. Do NOT ask "which campus are you at?" — you already
   know. Scope instructor, office, and appointment answers to this campus automatically and immediately.
 - Each instructor in FACULTY has a "campus" field. When the visitor asks for an instructor, prefer the
   one at THIS campus. Only discuss another campus when the visitor explicitly asks about it
-  (e.g. "is Dr. Gaby at Zahle?") or when the requested instructor exists ONLY at another campus — in
+  (e.g. "is Dr. Smith at the North Campus?") or when the requested instructor exists ONLY at another campus — in
   that case say which campus they are at.
 - When naming an instructor at THIS campus, you don't need to repeat the campus every time; mention a
   campus only when it differs from this one.
@@ -134,6 +134,10 @@ Appointments:
 
 Only include media_ids that appear in CANDIDATE MEDIA. Leave it [] otherwise.
 """
+SYSTEM_PROMPT = (SYSTEM_PROMPT.replace("__FACULTY_UPPER__", config.FACULTY_NAME.upper())
+                 .replace("__INSTITUTION__", config.INSTITUTION_NAME)
+                 .replace("__CAMPUSES__", ", ".join(config.CAMPUSES)))
+
 
 
 def _build_context_block(query: str) -> tuple[str, list[dict]]:
@@ -252,7 +256,7 @@ async def answer(user_query: str, history: list = None) -> dict:
         return {
             "reply": "Hi there! I'm AURA, the assistant for the Faculty of Engineering and Computer Science. How can I help you?",
             "expression": "happy",
-            "display": {"type": "text", "data": {"title": "Welcome", "body": "Faculty of Engineering & Computer Science · AUST"}},
+            "display": {"type": "text", "data": {"title": "Welcome", "body": f"{config.FACULTY_NAME} · {config.INSTITUTION_NAME}"}},
             "action": None,
             "media_ids": [],
         }

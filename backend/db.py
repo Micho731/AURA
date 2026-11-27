@@ -3,6 +3,8 @@ import json
 import os
 import threading
 import uuid
+
+import config
 from datetime import datetime
 from typing import Any
 
@@ -241,14 +243,14 @@ def set_auto_accept(faculty_id: str, auto_accept: bool) -> bool:
 
 # ------- Settings (kiosk config: home campus, etc.) --------------------------
 
-VALID_CAMPUSES = ["Achrafieh (Beirut)", "Zahle (Bekaa)", "Sidon (South)", "Bhamdoun (Mount Lebanon)"]
+VALID_CAMPUSES = config.CAMPUSES
 
 
 def get_settings() -> dict:
     return _read(SETTINGS_PATH, {})
 
 
-def get_home_campus(default: str = "Achrafieh (Beirut)") -> str:
+def get_home_campus(default: str = config.HOME_CAMPUS) -> str:
     return get_settings().get("home_campus") or default
 
 

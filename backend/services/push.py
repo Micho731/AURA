@@ -11,7 +11,7 @@ import db
 
 VAPID_PUBLIC_KEY = os.getenv("VAPID_PUBLIC_KEY", "")
 VAPID_PRIVATE_KEY = os.getenv("VAPID_PRIVATE_KEY", "")
-VAPID_SUBJECT = os.getenv("VAPID_SUBJECT", "mailto:admin@aust.edu.lb")
+VAPID_SUBJECT = os.getenv("VAPID_SUBJECT", "mailto:admin@example.edu")
 
 
 def is_configured() -> bool:

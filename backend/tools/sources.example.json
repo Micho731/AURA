@@ -1,0 +1,30 @@
+{
+  "program_pages": [
+    {
+      "name": "BS in Computer & Communications Engineering",
+      "url": "https://www.example.edu/engineering/programs/cce/study-plan"
+    },
+    {
+      "name": "BS in Mechatronics Engineering",
+      "url": "https://www.example.edu/engineering/programs/mechatronics/study-plan"
+    },
+    {
+      "name": "BS in Computer Science",
+      "url": "https://www.example.edu/engineering/programs/computer-science/study-plan"
+    }
+  ],
+  "flowchart_pdfs": [
+    {
+      "name": "BS in Computer & Communications Engineering",
+      "url": "https://www.example.edu/files/cce-flowchart.pdf"
+    },
+    {
+      "name": "BS in Mechatronics Engineering",
+      "url": "https://www.example.edu/files/mechatronics-flowchart.pdf"
+    },
+    {
+      "name": "BS in Computer Science",
+      "url": "https://www.example.edu/files/cs-flowchart.pdf"
+    }
+  ]
+}

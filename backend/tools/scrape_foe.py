@@ -1,6 +1,6 @@
-"""Scrape the AUST / Faculty of Engineering site into plain-text files.
+"""Scrape a faculty website into plain-text files.
 
-The AUST site is an AngularJS app — content is rendered by JavaScript, so a plain HTTP
+Many university sites are JavaScript apps — content is rendered by JavaScript, so a plain HTTP
 fetch returns an empty shell. This scraper drives a headless Chromium (Playwright) to render
 each page, then extracts the visible text.
 
@@ -25,7 +25,7 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 RAW_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "knowledge", "raw")
-SITEMAP_URL = os.getenv("FOE_SITEMAP", "https://www.aust.edu.lb/sitemap.xml")
+SITEMAP_URL = os.getenv("FOE_SITEMAP", os.getenv("FOE_SCRAPE_URL", "https://www.example.edu").rstrip("/") + "/sitemap.xml")
 
 MAX_PAGES = int(os.getenv("SCRAPE_MAX_PAGES", "120"))
 NAV_TIMEOUT_MS = int(os.getenv("SCRAPE_NAV_TIMEOUT", "30000"))

@@ -1,6 +1,6 @@
 """Scrape the engineering course-flowchart / study-plan PDFs into plain text.
 
-The AUST site publishes program curricula as downloadable PDFs (e.g. MTE-Flow-2024.pdf), not as
+Many faculty sites publish program curricula as downloadable PDFs (e.g. MTE-Flow-2024.pdf), not as
 text on the page — so the normal HTML scraper only captures the nav menu, never the courses.
 This tool visits each program page, finds the linked PDF(s), extracts their text with pypdf, and
 writes one .txt per PDF into data/knowledge/raw/ so `tools.ingest` can embed them.
@@ -15,24 +15,13 @@ import urllib.request
 
 from pypdf import PdfReader
 
+from tools.sources import load as load_sources
+
 RAW_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "knowledge", "raw")
 UA = {"User-Agent": "Mozilla/5.0 (AURA FOE knowledge crawler)"}
 
-# Program pages whose linked PDF flowcharts hold the actual course lists.
-PROGRAM_PAGES = [
-    ("BS in Mechatronics Engineering (116 cr.hr.)",
-     "https://www.aust.edu.lb/facultydetails/faculty-of-engineering/undergraduate-programs/bs-in-mechatronics-engineering-116-crhr/course-flowchart/1642"),
-    ("BS in Computer & Communications Engineering (118 cr.hr.)",
-     "https://www.aust.edu.lb/facultydetails/faculty-of-engineering/undergraduate-programs/bs-in-computer-communications-engineering-118-crhr/course-flowchart-study-plan/515"),
-    ("BS in Computer & Communications Engineering — Biomedical Track (118 cr.hr.)",
-     "https://www.aust.edu.lb/facultydetails/faculty-of-engineering/undergraduate-programs/bs-in-computer-communications-engineering-track-biomedical-engineering-118-crhr/352"),
-    ("MS in Mechatronics Engineering (39 cr.hr.)",
-     "https://www.aust.edu.lb/facultydetails/faculty-of-engineering/graduate-programs/ms-in-mechatronics-engineering-39-crhr/2658"),
-    ("MS in Computer & Communications Engineering (39 cr.hr.)",
-     "https://www.aust.edu.lb/facultydetails/faculty-of-engineering/graduate-programs/ms-in-computer-communications-engineering-39-crhr/major-description/380"),
-    ("BS in Computer Science (107 cr.hr.)",
-     "https://www.aust.edu.lb/facultydetails/faculty-of-arts-and-sciences/undergraduate-programs/bs-in-computer-science-107-crhr/course-flowchart-study-plan/505"),
-]
+# Program pages whose linked PDF flowcharts hold the actual course lists (see tools/sources.py).
+PROGRAM_PAGES = load_sources("program_pages")
 
 
 def find_pdf_urls(page_url: str) -> list[str]:

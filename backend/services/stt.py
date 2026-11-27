@@ -1,7 +1,7 @@
 """Speech-to-text.
 
 Primary path: OpenAI hosted transcription (gpt-4o-transcribe) — the most accurate option,
-biased with a domain prompt so it gets AUST names and engineering terms right.
+biased with a domain prompt so it gets campus names and engineering terms right.
 Fallback path: local faster-whisper (offline, free) if the API call fails or no key is set.
 """
 import io
@@ -53,12 +53,20 @@ _COMMON_EN = {
     "engineering", "mechatronics", "computer", "lab", "course", "courses", "class", "program",
     "student", "appointment", "meeting", "building", "room", "department", "admission", "tuition",
     "one", "two", "three", "four", "here", "there", "about", "from", "like", "want", "looking",
-    "achrafieh", "zahle", "sidon", "bhamdoun", "aust", "university",
+    "university",
     "free", "today", "tomorrow", "now", "time", "available", "open", "when", "week",
     "register", "registration", "exam", "exams", "fee", "fees", "cost", "scholarship",
     "competition", "competitions", "project", "projects", "expo", "robotics", "research",
     "prerequisite", "prerequisites", "science", "register", "semester", "summer", "fall", "spring",
 }
+
+# Campus and institution names from the kiosk config also count as known words.
+try:
+    import config as _config
+    _COMMON_EN |= {w.lower() for name in [_config.INSTITUTION_NAME, *_config.CAMPUSES]
+                   for w in re.findall(r"[A-Za-z]+", name) if len(w) > 2}
+except Exception:  # config is optional for this module
+    pass
 
 # Spoken numbers are valid one-word answers (campus picker etc.)
 _VALID_SHORT = {"one", "two", "three", "four", "1", "2", "3", "4", "yes", "no", "hi", "hello", "hey"}

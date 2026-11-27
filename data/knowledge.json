@@ -3,7 +3,7 @@
     {
       "code": "CCE",
       "name": "Computer & Communications Engineering",
-      "description": "5-year BS program covering software, hardware, networks, and communications systems. ABET-accredited at the Beirut campus."
+      "description": "5-year BS program covering software, hardware, networks, and communications systems."
     },
     {
       "code": "MTE",
@@ -17,18 +17,50 @@
     }
   ],
   "locations": {
-    "Dean's Office": { "building": "Block A", "room": "Room 201", "floor": "2nd floor" },
-    "CCE Department": { "building": "Block B", "room": "Room 210", "floor": "2nd floor" },
-    "MTE Department": { "building": "Block A", "room": "Room 300", "floor": "3rd floor" },
-    "Computer Lab": { "building": "Block B", "room": "Room 405", "floor": "4th floor" },
-    "Mechatronics Lab": { "building": "Block A", "room": "Room 410", "floor": "4th floor" },
-    "Biomedical Lab": { "building": "Block C", "room": "Room 412", "floor": "4th floor" },
-    "Engineering Library": { "building": "Block A", "room": "2nd Floor Wing", "floor": "2nd floor" },
-    "Student Services": { "building": "Main Hall", "room": "Room 101", "floor": "Ground floor" }
+    "Dean's Office": {
+      "building": "Block A",
+      "room": "Room 201",
+      "floor": "2nd floor"
+    },
+    "CCE Department": {
+      "building": "Block B",
+      "room": "Room 210",
+      "floor": "2nd floor"
+    },
+    "MTE Department": {
+      "building": "Block A",
+      "room": "Room 300",
+      "floor": "3rd floor"
+    },
+    "Computer Lab": {
+      "building": "Block B",
+      "room": "Room 405",
+      "floor": "4th floor"
+    },
+    "Mechatronics Lab": {
+      "building": "Block A",
+      "room": "Room 410",
+      "floor": "4th floor"
+    },
+    "Biomedical Lab": {
+      "building": "Block C",
+      "room": "Room 412",
+      "floor": "4th floor"
+    },
+    "Engineering Library": {
+      "building": "Block A",
+      "room": "2nd Floor Wing",
+      "floor": "2nd floor"
+    },
+    "Student Services": {
+      "building": "Main Hall",
+      "room": "Room 101",
+      "floor": "Ground floor"
+    }
   },
   "contact": {
-    "dean_office_phone": "+961 1 XXX XXX",
-    "general_email": "foe@aust.edu.lb",
-    "website": "https://www.aust.edu.lb/foe"
+    "dean_office_phone": "+000 0 000 000",
+    "general_email": "engineering@example.edu",
+    "website": "https://www.example.edu/engineering"
   }
 }

@@ -1,7 +1,7 @@
 """Office-hours availability engine.
 
 Pure helpers over a faculty record's schedule fields (office_hours / slot_minutes / auto_accept /
-overrides). All datetimes are **naive local** (one timezone — Lebanon). The kiosk validates a
+overrides). All datetimes are **naive local** (one timezone — the kiosk's local time). The kiosk validates a
 student's requested time against these rules before booking.
 
 Faculty schedule shape (all optional, defaulted by db.get_schedule):

@@ -9,7 +9,7 @@
       "status": "Available",
       "username": "jdoe",
       "password": "demo1234",
-      "campus": "Achrafieh (Beirut)",
+      "campus": "Main Campus",
       "office_hours": {
         "mon": [],
         "tue": [],
@@ -35,7 +35,7 @@
       "status": "Available",
       "username": "jsmith",
       "password": "demo1234",
-      "campus": "Achrafieh (Beirut)",
+      "campus": "Main Campus",
       "office_hours": {
         "mon": [],
         "tue": [],
@@ -61,7 +61,7 @@
       "status": "Available",
       "username": "mexample",
       "password": "demo1234",
-      "campus": "Achrafieh (Beirut)",
+      "campus": "Main Campus",
       "office_hours": {
         "mon": [],
         "tue": [],

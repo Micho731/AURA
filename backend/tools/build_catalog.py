@@ -1,7 +1,7 @@
 """Build a course catalog (codes, names, credits, PREREQUISITES, descriptions) from the program
 flowchart PDFs using gpt-4o vision.
 
-The AUST site doesn't publish course descriptions or prerequisite lists as text — but the flowchart
+Faculty sites often don't publish course descriptions or prerequisite lists as text — but the flowchart
 PDFs encode prerequisites visually (arrows from one course to the next). gpt-4o vision reads those
 arrows into an explicit prerequisite map, and writes a short, clearly-generic description from each
 course title. Output is saved as a searchable knowledge file per program so AURA can answer:
@@ -23,19 +23,15 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 from openai import OpenAI  # noqa: E402
 
+from tools.sources import load as load_sources  # noqa: E402
+
+INSTITUTION = os.getenv("INSTITUTION_NAME", "Example University")
 RAW_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "knowledge", "raw")
 UA = {"User-Agent": "Mozilla/5.0"}
 client = OpenAI()
 
-# Program flowchart PDFs (the ones with prerequisite arrows). Discovered earlier via scrape_pdfs.
-PROGRAMS = [
-    ("BS in Computer & Communications Engineering (118 cr.hr.)",
-     "https://api.aust.edu.lb/content/uploads/files/233~CCE-Flowchart.pdf"),
-    ("BS in Mechatronics Engineering (116 cr.hr.)",
-     "https://api.aust.edu.lb/content/uploads/files/MTE-Flow-2024.pdf"),
-    ("BS in Computer Science (107 cr.hr.)",
-     "https://api.aust.edu.lb/content/uploads/files/803~CSI-Program-Flowchart.pdf"),
-]
+# Program flowchart PDFs (the ones with prerequisite arrows), listed in tools/sources.json.
+PROGRAMS = load_sources("flowchart_pdfs")
 
 PROMPT = (
     "This image is an official university ENGINEERING/CS program flowchart. Arrows between course "
@@ -89,7 +85,7 @@ def main():
         if not courses:
             print(f"[catalog] no courses parsed for {program}")
             continue
-        lines = [f"SOURCE: AUST {program} official flowchart (prerequisites read from the diagram)",
+        lines = [f"SOURCE: {INSTITUTION} {program} official flowchart (prerequisites read from the diagram)",
                  "", f"COURSE CATALOG — {program}",
                  "(Each course: code, name, credits, prerequisites, and a general description.)", ""]
         for c in courses:
